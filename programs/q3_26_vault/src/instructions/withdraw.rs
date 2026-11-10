@@ -30,9 +30,18 @@ pub struct Withdraw<'info> {
 
 impl<'info> Withdraw<'info> {
     pub fn withdraw(&mut self, amount: u64) -> Result<()> {
+        require!(amount > 0, ErrorCode::InvalidAmount);
+
         let rent_exempt = Rent::get()?.minimum_balance(self.vault.data_len());
 
-        require!(amount < self.vault.lamports() - rent_exempt, ErrorCode::InvalidAmount);
+        let available = self
+            .vault
+            .lamports()
+            .checked_sub(rent_exempt)
+            .ok_or(ErrorCode::InsufficientBalance)?;
+
+        require!(amount <= available, ErrorCode::InsufficientBalance);
+
 
         let cpi_program = self.system_program.key();
 
