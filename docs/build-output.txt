@@ -1,0 +1,25 @@
+rtk :     Blocking waiting for file lock on package cache
+At line:1 char:62
++ ... y -Path "docs" -Force | Out-Null; rtk proxy anchor build 2>&1 | Tee-O ...
++                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (    Blocking wa...n package cache:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+warning: unused import: `error::ErrorCode`
+ --> programs\q3_26_vault\src\instructions\close.rs:3:5
+  |
+3 |     error::ErrorCode,
+  |     ^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `q3_26_vault` (lib) generated 1 warning (run `cargo fix --lib -p q3_26_vault` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 5.34s
+   Compiling q3_26_vault v0.1.0 (D:\Web3\Turbin3\Week 2\Assignment\anchor_vault_starter_q3_26\programs\q3_26_vault)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 42.98s
+     Running unittests src\lib.rs (D:\Web3\Turbin3\Week 
+2\Assignment\anchor_vault_starter_q3_26\target\debug\deps\q3_26_vault-5ed6482920ad1741.exe)
+     Running tests\test_initialize.rs (D:\Web3\Turbin3\Week 
+2\Assignment\anchor_vault_starter_q3_26\target\debug\deps\test_initialize-83c73ee19bfa6067.exe)
